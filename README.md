@@ -4,8 +4,6 @@
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/knocks-public/2024-HackFS)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/knocks-public/2024-HackFS)
 ![GitHub repo size](https://img.shields.io/github/repo-size/knocks-public/2024-HackFS)
-[![Tryvy](https://github.com/knocks-public/2024-HackFS/actions/workflows/trivy.yml/badge.svg?branch=main)](https://github.com/knocks-public/2024-HackFS/actions/workflows/trivy.yml)
-[![codecov](https://codecov.io/gh/susumutomita/2024-HackFS/graph/badge.svg?token=B6oad5yfuL)](https://codecov.io/gh/susumutomita/2024-HackFS)
 
 # DecentraCard
 
