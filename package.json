@@ -1,0 +1,36 @@
+{
+  "name": "2024-hackfs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Knocks",
+  "license": "MIT",
+  "scripts": {
+
+    "clean": "npx rimraf node_modules out",
+    "test": "jest",
+    "test:coverage": "jest --coverage --verbose",
+    "test:watch": "jest --watch --verbose",
+    "lint:text": "npx textlint ./README.md",
+    "lint-staged": "lint-staged",
+    "lint": "eslint 'src/**/*.{ts,tsx}' --fix",
+    "format": "prettier --write 'src/**/*.{ts,tsx,json,md}'",
+    "format:check": "prettier --check 'src/**/*.{ts,tsx,js,jsx,json,css}'",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/react": "^18.2.63",
+    "@types/react-test-renderer": "^18.0.7",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "textlint": "^14.0.3",
+    "textlint-rule-no-mixed-zenkaku-and-hankaku-alphabet": "^1.0.1",
+    "textlint-rule-no-mixed-zenkaku-and-hankaku-number": "^1.0.0",
+    "textlint-rule-preset-ja-spacing": "^2.2.0",
+    "textlint-rule-preset-ja-technical-writing": "^10.0.1",
+    "textlint-rule-spellcheck-tech-word": "^5.0.0",
+    "typescript": "^5.3.3"
+  }
+}
