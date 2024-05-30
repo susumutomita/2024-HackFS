@@ -34,3 +34,6 @@ jobs:
 
       - name: TextLint
         run: make lint_text
+
+      - name: Test
+        run: make test

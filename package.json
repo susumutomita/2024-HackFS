@@ -5,11 +5,11 @@
   "author": "Knocks",
   "license": "MIT",
   "scripts": {
-
     "clean": "npx rimraf node_modules out",
     "test": "jest",
     "test:coverage": "jest --coverage --verbose",
     "test:watch": "jest --watch --verbose",
+    "test:contract": "forge test -vvv --root src/contract",
     "lint:text": "npx textlint ./README.md",
     "lint-staged": "lint-staged",
     "lint": "eslint 'src/**/*.{ts,tsx}' --fix",

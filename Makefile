@@ -16,19 +16,7 @@ clean:
 
 .PHONY: test
 test:
-	npm run test
-
-.PHONY: test_coverage
-test_coverage:
-	npm run test:coverage
-
-.PHONY: test_debug
-test_debug:
-	npm run test:debug
-
-.PHONY: test_watch
-test_watch:
-	npm run test:watch
+	npm run test:contract
 
 .PHONY: lint
 lint:
@@ -47,4 +35,4 @@ format_check:
 	npm run format:check
 
 .PHONY: before_commit
-before_commit: lint_text
+before_commit: test lint_text
