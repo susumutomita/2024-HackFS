@@ -32,8 +32,14 @@ jobs:
       - name: Install dependencies
         run: make install
 
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+
       - name: TextLint
         run: make lint_text
 
       - name: Test
         run: make test
+
+      - name: Run snapshot
+        run: NO_COLOR=1 forge snapshot --root src/contract >> $GITHUB_STEP_SUMMARY

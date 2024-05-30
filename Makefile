@@ -14,6 +14,10 @@ build:
 clean:
 	npm run clean
 
+.PHONY: gas
+gas:
+	npm run gas
+
 .PHONY: test
 test:
 	npm run test:contract
@@ -35,4 +39,4 @@ format_check:
 	npm run format:check
 
 .PHONY: before_commit
-before_commit: test lint_text
+before_commit: test gas lint_text

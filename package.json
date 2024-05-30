@@ -11,6 +11,7 @@
     "test:watch": "jest --watch --verbose",
     "test:contract": "forge test -vvv --root src/contract",
     "lint:text": "npx textlint ./README.md",
+    "gas": "forge snapshot --root src/contract",
     "lint-staged": "lint-staged",
     "lint": "eslint 'src/**/*.{ts,tsx}' --fix",
     "format": "prettier --write 'src/**/*.{ts,tsx,json,md}'",
