@@ -17,13 +17,16 @@ export default function ViewMissions() {
         const provider = new BrowserProvider(window.ethereum);
         const signer = await provider.getSigner();
         const contract = new Contract(contractAddress, abi, signer);
-
         const missionList = [];
         const count = await contract.getMissionCount();
-
         for (let i = 0; i < count; i++) {
           const mission = await contract.getMissionByIndex(i);
-          missionList.push(mission);
+          const formattedMission = {
+            companyName: mission[0],
+            missionCid: mission[1],
+          };
+          console.log('mission', formattedMission);
+          missionList.push(formattedMission);
         }
 
         setMissions(missionList);
