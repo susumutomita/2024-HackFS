@@ -21,17 +21,22 @@ export default function AddMission() {
       return;
     }
 
-    const provider = new BrowserProvider(window.ethereum);
-    const signer = await provider.getSigner();
-    const contract = new Contract(contractAddress, abi, signer);
-
     try {
-      const tx = await contract.setMission(companyName, mission);
-      await tx.wait();
+      await window.ethereum.request({ method: 'eth_requestAccounts' });
+
+      const provider = new BrowserProvider(window.ethereum);
+      const signer = await provider.getSigner();
+      const contract = new Contract(contractAddress, abi, signer);
+
+      await contract.setMission(companyName, mission);
       alert('Mission added successfully!');
-    } catch (error) {
-      console.error(error);
-      alert('Failed to add mission');
+    } catch (error: any) {
+      console.error('Error adding mission:', error);
+      if (error.code === 4001) {
+        alert('MetaMask access denied');
+      } else {
+        alert('Failed to add mission');
+      }
     }
   };
 

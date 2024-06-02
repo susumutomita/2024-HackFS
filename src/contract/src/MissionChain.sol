@@ -7,19 +7,24 @@ contract MissionChain {
         string missionCid;
     }
 
-    mapping(address => Mission) private missions;
+    Mission[] private missions;
 
     function setMission(
         string memory _companyName,
         string memory _missionCid
     ) public {
-        missions[msg.sender] = Mission(_companyName, _missionCid);
+        missions.push(Mission(_companyName, _missionCid));
     }
 
-    function getMission(
-        address _companyAddress
+    function getMissionCount() public view returns (uint256) {
+        return missions.length;
+    }
+
+    function getMissionByIndex(
+        uint256 index
     ) public view returns (string memory, string memory) {
-        Mission memory mission = missions[_companyAddress];
+        require(index < missions.length, "Index out of bounds");
+        Mission storage mission = missions[index];
         return (mission.companyName, mission.missionCid);
     }
 }

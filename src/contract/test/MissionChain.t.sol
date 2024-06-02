@@ -17,11 +17,10 @@ contract MissionChainTest is Test {
 
         missionChain.setMission(companyName, missionCid);
 
-        (
-            string memory actualCompanyName,
-            string memory actualMissionCid
-        ) = missionChain.getMission(address(this));
+        // Retrieve the mission by index (assuming it's the first mission added)
+        (string memory actualCompanyName, string memory actualMissionCid) = missionChain.getMissionByIndex(0);
 
+        // Use keccak256 to compare strings
         assert(
             keccak256(abi.encodePacked(actualCompanyName)) ==
                 keccak256(abi.encodePacked(companyName))

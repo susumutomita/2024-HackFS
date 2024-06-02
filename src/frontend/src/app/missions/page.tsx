@@ -1,21 +1,11 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserProvider, Contract } from 'ethers';
 import { abi, contractAddress } from '../constants/contract';
 
-declare global {
-  interface Window {
-    ethereum: any;
-  }
-}
+export default function ViewMissions() {
+  const [missions, setMissions] = useState<{ companyName: string, missionCid: string }[]>([]);
 
-interface Mission {
-  companyName: string;
-  mission: string;
-}
-
-export default function Missions() {
-  const [missions, setMissions] = useState<Mission[]>([]);
   useEffect(() => {
     const fetchMissions = async () => {
       if (!window.ethereum) {
@@ -23,23 +13,22 @@ export default function Missions() {
         return;
       }
 
-      const provider = new BrowserProvider(window.ethereum);
-      const signer = await provider.getSigner();
-      const contract = new Contract(contractAddress, abi, signer);
-
       try {
-        const missionCount = await contract.getMissionCount();
-        const missionList: Mission[] = [];
-        for (let i = 0; i < missionCount; i++) {
-          const mission = await contract.missions(i);
-          missionList.push({
-            companyName: mission.companyName,
-            mission: mission.mission,
-          });
+        const provider = new BrowserProvider(window.ethereum);
+        const signer = await provider.getSigner();
+        const contract = new Contract(contractAddress, abi, signer);
+
+        const missionList = [];
+        const count = await contract.getMissionCount();
+
+        for (let i = 0; i < count; i++) {
+          const mission = await contract.getMissionByIndex(i);
+          missionList.push(mission);
         }
+
         setMissions(missionList);
       } catch (error) {
-        console.error(error);
+        console.error('Error fetching missions:', error);
         alert('Failed to fetch missions');
       }
     };
@@ -50,11 +39,11 @@ export default function Missions() {
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Missions</h1>
-      <ul className="space-y-4">
+      <ul>
         {missions.map((mission, index) => (
-          <li key={index} className="border p-4 rounded-md shadow-sm">
-            <h2 className="text-xl font-bold">{mission.companyName}</h2>
-            <p>{mission.mission}</p>
+          <li key={index} className="mb-2">
+            <strong>Company Name:</strong> {mission.companyName}<br />
+            <strong>Mission CID:</strong> {mission.missionCid}
           </li>
         ))}
       </ul>
@@ -62,6 +51,5 @@ export default function Missions() {
         Back
       </button>
     </div>
-
   );
 }

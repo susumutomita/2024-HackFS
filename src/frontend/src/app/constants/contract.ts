@@ -1,5 +1,5 @@
 // src/frontend/src/app/constants/contract.ts
-export const contractAddress = "0x61F2553332c313F797A54496085Ad6881B81D913";
+export const contractAddress = "0x243545704F4984F10aDd1c60703Bd99470fE74d0";
 
 export const abi = [
   {
