@@ -48,7 +48,7 @@ $ anvil
 ### Deploy
 
 ```shell
-$ forge script script/MissionChain.s.soll:MissionChainScript --rpc-url <your_rpc_url> --private-key <your_private_key>  --broadcast
+forge script script/MissionChain.s.sol:MissionChainScript --rpc-url $RPC_URL --broadcast --sender $YOUR_ADDRESS --private-key $PRIVATE_KEY
 ```
 
 ### Cast
