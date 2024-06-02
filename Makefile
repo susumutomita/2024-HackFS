@@ -10,6 +10,10 @@ setup_husky:
 build:
 	npm run build
 
+.PHONY: start_dev
+start_dev:
+	npm run start:dev
+
 .PHONY: clean
 clean:
 	npm run clean
