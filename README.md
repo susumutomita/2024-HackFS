@@ -27,9 +27,8 @@ MissionChain is a decentralized application (dApp) that allows companies to stor
 
 ## Technology Stack
 
-- **Frontend**: React.js for the user interface.
-- **Backend**: Node.js for server-side logic.
-- **Blockchain**: Filecoin for decentralized storage and Ethereum for smart contracts.
+- **Frontend**: Next.js for the user interface.
+- **Blockchain**: Foundry for Ethereum smart contracts.
 
 ## How It's Made
 

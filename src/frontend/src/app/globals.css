@@ -18,9 +18,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
@@ -36,6 +34,22 @@ body {
 
   .dark-mode-button {
     background-color: #1e88e5;
+    color: #ffffff;
+  }
+
+  .dark-mode-input {
+    background-color: #444444;
+    color: #ffffff;
+    border: 1px solid #555555;
+  }
+
+  .dark-mode-textarea {
+    background-color: #444444;
+    color: #ffffff;
+    border: 1px solid #555555;
+  }
+
+  .dark-mode-label {
     color: #ffffff;
   }
 }
