@@ -1,4 +1,3 @@
-// src/frontend/src/app/constants/contract.ts
 export const contractAddress = "0xf87cB09134b4e7926FAC638731A8723F4ea9C478";
 
 export const abi = [
@@ -11,7 +10,7 @@ export const abi = [
       },
       {
         "internalType": "string",
-        "name": "_missionCID",
+        "name": "_missionCid",
         "type": "string"
       }
     ],
@@ -21,14 +20,27 @@ export const abi = [
     "type": "function"
   },
   {
-    "inputs": [
+    "inputs": [],
+    "name": "getMissionCount",
+    "outputs": [
       {
-        "internalType": "address",
-        "name": "_owner",
-        "type": "address"
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
-    "name": "getMission",
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "getMissionByIndex",
     "outputs": [
       {
         "internalType": "string",
