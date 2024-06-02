@@ -29,7 +29,7 @@ export default function Missions() {
 
       try {
         const missionCount = await contract.getMissionCount();
-        const missionList: Mission[] = []; // 型を明示的に指定
+        const missionList: Mission[] = [];
         for (let i = 0; i < missionCount; i++) {
           const mission = await contract.missions(i);
           missionList.push({
@@ -58,6 +58,10 @@ export default function Missions() {
           </li>
         ))}
       </ul>
+      <button onClick={() => window.history.back()} className="mt-4 bg-gray-500 text-white px-4 py-2 rounded-md">
+        Back
+      </button>
     </div>
+
   );
 }
