@@ -2,17 +2,6 @@
 
 This repository contains the smart contract code for the MissionChain decentralized application. The smart contract is developed using [Foundry](https://book.getfoundry.sh/), a fast, portable, and modular toolkit for Ethereum application development.
 
-## Foundry
-
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
-
-Foundry consists of:
-
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
 ## Documentation
 
 For detailed documentation on Foundry, visit [Foundry Book](https://book.getfoundry.sh/).
@@ -24,7 +13,7 @@ For detailed documentation on Foundry, visit [Foundry Book](https://book.getfoun
 To compile the smart contracts, run:
 
 ```shell
-$ forge build
+forge build
 ```
 
 ### Test
@@ -32,7 +21,7 @@ $ forge build
 To run the tests for the smart contracts, use:
 
 ```shell
-$ forge test
+forge test
 ```
 
 ### Format
@@ -40,7 +29,7 @@ $ forge test
 To format the smart contract code, execute:
 
 ```shell
-$ forge fmt
+forge fmt
 ```
 
 ### Gas Snapshots
@@ -48,7 +37,7 @@ $ forge fmt
 To create gas snapshots, run:
 
 ```shell
-$ forge snapshot
+forge snapshot
 ```
 
 ### Anvil
@@ -56,7 +45,7 @@ $ forge snapshot
 To start a local Ethereum node, use:
 
 ```shell
-$ anvil
+anvil
 ```
 
 ### Deploy
@@ -72,7 +61,7 @@ forge script script/MissionChain.s.sol:MissionChainScript --rpc-url $RPC_URL --b
 To interact with the EVM smart contracts, send transactions, and get chain data, use:
 
 ```shell
-$ cast <subcommand>
+cast <subcommand>
 ```
 
 ### Help
@@ -80,9 +69,9 @@ $ cast <subcommand>
 For help with Foundry commands, run:
 
 ```shell
-$ forge --help
-$ anvil --help
-$ cast --help
+forge --help
+anvil --help
+cast --help
 ```
 
 ## Smart Contract
