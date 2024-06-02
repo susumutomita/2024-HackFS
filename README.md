@@ -80,4 +80,4 @@ MissionChain is licensed under the [MIT License](LICENSE).
 
 # The Knocks Team
 
-- [Susumu Tomita](https://www.linkedin.com/in/susumutomita/) - Full Stack Developer
+- [Susumu Tomita](https://susumutomita.netlify.app/) - Full Stack Developer
