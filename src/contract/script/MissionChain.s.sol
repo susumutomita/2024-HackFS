@@ -10,7 +10,6 @@ contract MissionChainScript is Script {
     function run() public {
         vm.startBroadcast();
 
-        // MissionChainコントラクトのデプロイメント
         MissionChain missionChain = new MissionChain();
 
         console.log("MissionChain deployed at:", address(missionChain));

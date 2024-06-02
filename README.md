@@ -9,7 +9,11 @@
 
 ETH Global Link: https://ethglobal.com/showcase/decentrabackup-bncu4
 
-MissionChain is a decentralized application (dApp) that allows companies to store, share, and preserve their mission statements, values, and visions on the blockchain. By leveraging the power of Filecoin for storage and smart contracts for managing these important documents, MissionChain ensures that company mission statements are always accessible, secure, and verifiable.
+<div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center">
+  <img src="https://github.com/susumutomita/2024-HackFS/assets/11481781/04240789-ea43-4025-8aae-e8df742cf88d" width="200" height="200" />
+</div>
+
+MissionChain is a decentralized application (dApp) that allows companies to store, share, and preserve their mission statements, values, and visions on the blockchain. By leveraging Ethereum smart contracts for managing these important documents, MissionChain ensures that company mission statements are always accessible, secure, and verifiable.
 
 ## Use Cases
 
@@ -19,7 +23,6 @@ MissionChain is a decentralized application (dApp) that allows companies to stor
 
 ## Features
 
-- Decentralized storage with Filecoin
 - Smart contract management on Ethereum
 - User-friendly interface for uploading and accessing mission statements
 - Enhanced privacy and security with encryption
@@ -32,37 +35,23 @@ MissionChain is a decentralized application (dApp) that allows companies to stor
 
 ## How It's Made
 
-MissionChain prioritizes privacy, security, and simplicity. The backend leverages the Filecoin network for decentralized storage, ensuring high durability and availability of data. The Filecoin Virtual Machine (FVM) manages automated tasks such as uploading and accessing mission statements, utilizing smart contracts for efficient and reliable data management.
+MissionChain prioritizes privacy, security, and simplicity. The backend leverages Ethereum smart contracts for data management, ensuring high durability and availability of mission statements.
 
 ### Backend:
 
-- **Filecoin**: Provides decentralized storage for mission statements, ensuring high durability and availability.
-- **Filecoin Virtual Machine (FVM)**: Manages automated tasks like scheduling backups and executing smart contracts for data management.
-- **Encryption**: Uses AES-256 encryption for securing data before uploading it to the Filecoin network.
+- **Ethereum**: Manages mission statements with smart contracts, ensuring data is secure and immutable.
 
 ### Frontend:
 
-- **React.js**: Used for building a responsive and interactive user interface.
-- **Node.js**: Serves as the backend framework, handling API requests and integration with Filecoin.
-
-### Integration with Partner Technologies:
-
-- **Web3.storage**: Simplifies data upload and retrieval processes.
-- **Ceramic Network**: Manages decentralized identities (DIDs) securely.
-- **Chainlink Oracles**: Provides real-time data and external triggers for backup and notification processes.
-
-### Hacky Solutions and Innovations:
-
-- **Automated Data Recovery**: Designed a mechanism where FVM can automatically initiate data recovery processes if corruption or loss is detected.
-- **Smart Contract-based Billing**: Created a billing system using smart contracts to handle payments for storage and retrieval services.
-- **Compression Algorithms**: Applied advanced data compression techniques to reduce storage costs and improve speeds.
-- **Decentralized Notification System**: Developed using IPFS and PubSub to ensure users receive alerts even if centralized services are unavailable.
+- **Next.js**: Used for building a responsive and interactive user interface.
 
 # Images
 
-## System Overview
-
 ## Screenshots
+
+<img src=https://github.com/susumutomita/2024-HackFS/assets/11481781/15b6e220-67bc-43d4-9e80-61a1649ab3b4 width=19%>
+<img src=https://github.com/susumutomita/2024-HackFS/assets/11481781/8cd8e9f1-80fa-4489-b773-d939e72ea8b5 width=19%>
+<img src=https://github.com/susumutomita/2024-HackFS/assets/11481781/d99d6bfe-6e35-456f-a057-b95529eac57a width=19%>
 
 # Getting Started
 
@@ -79,17 +68,6 @@ To run MissionChain locally, follow these steps:
    ```bash
    make install
    ```
-
-## Environment Configuration
-
-Set up the following environment variables:
-
-## Future Prospects
-
-MissionChain aims to revolutionize the preservation and sharing of corporate mission statements by:
-
-1. **Automating Document Management**: Enhancing efficiency by streamlining the storage and retrieval process.
-2. **Improving Corporate Transparency**: Significantly reducing costs and increasing transparency for stakeholders, thereby lowering the risk of misinformation or data tampering.
 
 ## Contribution
 
