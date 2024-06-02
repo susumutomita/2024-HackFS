@@ -3,22 +3,19 @@ import { useEffect, useState } from 'react';
 import { BrowserProvider, Contract } from 'ethers';
 import { abi, contractAddress } from '../constants/contract';
 
-// TypeScriptのための型定義
 declare global {
   interface Window {
     ethereum: any;
   }
 }
 
-// Missionインターフェースを定義
 interface Mission {
   companyName: string;
   mission: string;
 }
 
 export default function Missions() {
-  const [missions, setMissions] = useState<Mission[]>([]); // 型を明示的に指定
-
+  const [missions, setMissions] = useState<Mission[]>([]);
   useEffect(() => {
     const fetchMissions = async () => {
       if (!window.ethereum) {

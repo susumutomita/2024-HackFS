@@ -2,7 +2,6 @@
 export const contractAddress = "0x61F2553332c313F797A54496085Ad6881B81D913";
 
 export const abi = [
-  // ABIの内容をここに追加します
   {
     "inputs": [
       {
@@ -45,5 +44,4 @@ export const abi = [
     "stateMutability": "view",
     "type": "function"
   }
-  // その他のABIのエントリもここに追加します
 ];
