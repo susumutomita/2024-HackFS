@@ -52,4 +52,12 @@ body {
   .dark-mode-label {
     color: #ffffff;
   }
+
+  .dark-mode-link {
+    color: #1e88e5;
+  }
+
+  .dark-mode-link:hover {
+    text-decoration: underline;
+  }
 }

@@ -1,3 +1,4 @@
+// src/app/missions/page.tsx
 'use client';
 import { useState, useEffect } from 'react';
 import { BrowserProvider, Contract } from 'ethers';
@@ -40,7 +41,7 @@ export default function ViewMissions() {
   }, []);
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 dark-mode-bg">
       <h1 className="text-2xl font-bold mb-4">Missions</h1>
       <ul>
         {missions.map((mission, index) => (
@@ -50,7 +51,7 @@ export default function ViewMissions() {
           </li>
         ))}
       </ul>
-      <button onClick={() => window.history.back()} className="mt-4 bg-gray-500 text-white px-4 py-2 rounded-md">
+      <button onClick={() => window.history.back()} className="mt-4 bg-gray-500 text-white px-4 py-2 rounded-md dark-mode-button">
         Back
       </button>
     </div>
