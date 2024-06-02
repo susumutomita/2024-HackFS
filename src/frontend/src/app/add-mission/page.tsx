@@ -1,7 +1,14 @@
 'use client';
 import { useState } from 'react';
-import { ethereum } from 'ethers';
+import { BrowserProvider, Contract } from 'ethers';
 import { abi, contractAddress } from '../constants/contract';
+
+// TypeScriptのための型定義
+declare global {
+  interface Window {
+    ethereum: any;
+  }
+}
 
 export default function AddMission() {
   const [companyName, setCompanyName] = useState('');
@@ -15,12 +22,13 @@ export default function AddMission() {
       return;
     }
 
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSigner();
-    const contract = new ethers.Contract(contractAddress, abi, signer);
+    const provider = new BrowserProvider(window.ethereum);
+    const signer = await provider.getSigner();
+    const contract = new Contract(contractAddress, abi, signer);
 
     try {
-      await contract.setMission(companyName, mission);
+      const tx = await contract.setMission(companyName, mission);
+      await tx.wait(); // トランザクションが承認されるのを待ちます
       alert('Mission added successfully!');
     } catch (error) {
       console.error(error);
