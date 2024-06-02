@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { BrowserProvider, Contract } from 'ethers';
 import { abi, contractAddress } from '../constants/contract';
 
-// TypeScriptのための型定義
 declare global {
   interface Window {
     ethereum: any;
@@ -28,7 +27,7 @@ export default function AddMission() {
 
     try {
       const tx = await contract.setMission(companyName, mission);
-      await tx.wait(); // トランザクションが承認されるのを待ちます
+      await tx.wait();
       alert('Mission added successfully!');
     } catch (error) {
       console.error(error);

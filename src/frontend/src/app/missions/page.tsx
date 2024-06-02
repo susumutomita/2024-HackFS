@@ -10,8 +10,14 @@ declare global {
   }
 }
 
+// Missionインターフェースを定義
+interface Mission {
+  companyName: string;
+  mission: string;
+}
+
 export default function Missions() {
-  const [missions, setMissions] = useState([]);
+  const [missions, setMissions] = useState<Mission[]>([]); // 型を明示的に指定
 
   useEffect(() => {
     const fetchMissions = async () => {
@@ -26,10 +32,13 @@ export default function Missions() {
 
       try {
         const missionCount = await contract.getMissionCount();
-        const missionList = [];
+        const missionList: Mission[] = []; // 型を明示的に指定
         for (let i = 0; i < missionCount; i++) {
           const mission = await contract.missions(i);
-          missionList.push(mission);
+          missionList.push({
+            companyName: mission.companyName,
+            mission: mission.mission,
+          });
         }
         setMissions(missionList);
       } catch (error) {
